@@ -1,4 +1,5 @@
 <?php
+
 require __DIR__.'/function.php';
 
 if(isset($_GET['a'])){
