@@ -13,6 +13,7 @@ require __DIR__.'/foto-data.php';
 foreach ($foto as $key => $val){
     ?><a href="/dz3/images.php?id=<?php echo $key; ?>"><img src="/dz3/img/<?php echo $val; ?>" width="200"></a><?php
 }
+
 ?>
 </body>
 </html>

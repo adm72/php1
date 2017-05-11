@@ -1,4 +1,5 @@
 <?php
+
 require __DIR__.'/foto-data.php';
 
 if(isset($_GET['id'])){
