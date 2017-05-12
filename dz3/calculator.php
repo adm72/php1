@@ -27,7 +27,7 @@ $result = calculator($a, $b, $operator);
     <title>DZ3</title>
 </head>
 <body>
-<form action="calculator.php" method="get">
+<form action="/dz3/calculator.php" method="get">
     <input type="number" name="a" value="<?php echo $a; ?>">
     <select name="operator">
         <?php
