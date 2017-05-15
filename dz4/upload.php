@@ -1,22 +1,17 @@
 <?php
 
-$rand = rand(1, 999);
-$dir = scandir(__DIR__.'/img/');
-
 if (isset($_FILES['myimg'])) {
 
-    $myimg = $_FILES['myimg'];
+    if (0 == $_FILES['myimg']['error'] && $_FILES['myimg']['type'] == 'image/jpeg') {
 
-    if (0 == $myimg['error'] && $myimg['type'] == 'image/jpeg') {
+            $imgname = $_FILES['myimg']['name'];
+            $i = 0;
 
-        if (in_array($myimg['name'], $dir)) {
-
-            move_uploaded_file($myimg['tmp_name'], __DIR__.'/img/'.$rand.'_'.$myimg['name']);
-
-        } else {
-
-            move_uploaded_file($myimg['tmp_name'], __DIR__.'/img/'.$myimg['name']);
-        }
+            while (file_exists(__DIR__.'/img/'.$imgname)) {
+                $imgname = $i.'_'.$_FILES['myimg']['name'];
+                $i++;
+            }
+            move_uploaded_file($_FILES['myimg']['tmp_name'], __DIR__.'/img/'.$imgname);
     }
 }
 
