@@ -1,10 +1,16 @@
 <?php
 require __DIR__.'/function.php';
 
-$cities = ['Москва', 'Санкт-Петербург', 'Екатеринбург', 'Тюмень', 'Ишим', 'Курган', 'Париж', 'Тамбов',];
+$cities = ['Москва', 'Санкт-Петербург', 'Екатеринбург', 'Тюмень', 'Ишим', 'Курган', 'Новгород', 'Тамбов',];
 
 if (isset($_POST['text'])) {
-    $mycity = mb_strtolower(mb_substr($_POST['text'], -1));
+
+    $mycity = mb_strtoupper(mb_substr($_POST['text'], -1));
+
+    if ($mycity == 'Ь' || $mycity == 'Ъ') {
+        $mycity = mb_strtoupper(mb_substr($_POST['text'], -2, 1));
+    }
+
 } else {
     $mycity = null;
 }
