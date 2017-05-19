@@ -2,7 +2,6 @@
 
 function gameCity($arr, $mycity)
 {
-
     foreach ($arr as $item) {
         $ch = mb_substr($item, 0, 1);
 
