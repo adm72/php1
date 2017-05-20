@@ -2,6 +2,9 @@
 
 require __DIR__.'/uploader.php';
 
+$uploader = new Uploader('img');
+$uploader->upload();
+
 ?>
 
 <!DOCTYPE html>

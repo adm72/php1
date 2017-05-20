@@ -1,15 +1,13 @@
 <?php
 require __DIR__.'/guestbook.php';
 
-$gb = new GuestBook(__DIR__ . '/data.txt');
+$guestbook = new GuestBook(__DIR__ . '/data.txt');
 
 if (isset($_POST['text'])) {
-
-    $gb->append($_POST['text']);
-    $gb->save();
+    $guestbook->append($_POST['text']);
+    $guestbook->save();
     header('Location: /dz6/guestbook/index.php');
     exit();
-
 }
 
 ?>
@@ -22,7 +20,7 @@ if (isset($_POST['text'])) {
 <body>
 <?php
 
-foreach ($gb->getData() as $item) {
+foreach ($guestbook->getData() as $item) {
     ?><p><?php echo $item; ?></p><?php
 }
 
