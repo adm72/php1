@@ -1,8 +1,8 @@
 <?php
 
-require __DIR__.'/function.php';
+require __DIR__ . '/function.php';
 
-$path = __DIR__.'/data.txt';
+$path = __DIR__ . '/data.txt';
 
 $arr = guestbook($path);
 

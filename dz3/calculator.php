@@ -1,18 +1,18 @@
 <?php
 
-require __DIR__.'/function.php';
+require __DIR__ . '/function.php';
 
-if(isset($_GET['a'])){
-    $a = (int) $_GET['a'];
+if (isset($_GET['a'])) {
+    $a = (int)$_GET['a'];
 } else {
     $a = null;
 }
-if(isset($_GET['b'])){
-    $b = (int) $_GET['b'];
+if (isset($_GET['b'])) {
+    $b = (int)$_GET['b'];
 } else {
     $b = null;
 }
-if(isset($_GET['operator'])){
+if (isset($_GET['operator'])) {
     $operator = $_GET['operator'];
 } else {
     $operator = null;
@@ -32,9 +32,10 @@ $result = calculator($a, $b, $operator);
     <select name="operator">
         <?php
         $array = ['+', '-', '/', '*'];
-        foreach ($array as $value){
-            ?><option value="<?php echo $value; ?>"<?php
-            if($operator == $value){
+        foreach ($array as $value) {
+            ?>
+            <option value="<?php echo $value; ?>"<?php
+            if ($operator == $value) {
                 echo ' selected';
             }
             ?>><?php echo $value; ?></option><?php
@@ -44,11 +45,11 @@ $result = calculator($a, $b, $operator);
     <input type="number" name="b" value="<?php echo $b; ?>">
     <input type="submit" value="=">
     <?php
-    if($result !== null){
-        if($b < 0) {
-            echo $a .' '. $operator .' ('. $b .') = '. $result;
+    if ($result !== null) {
+        if ($b < 0) {
+            echo $a . ' ' . $operator . ' (' . $b . ') = ' . $result;
         } else {
-            echo $a .' '. $operator .' '. $b .' = '. $result;
+            echo $a . ' ' . $operator . ' ' . $b . ' = ' . $result;
         }
     }
     ?>

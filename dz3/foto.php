@@ -1,5 +1,5 @@
 <?php
-require __DIR__.'/foto-data.php';
+require __DIR__ . '/foto-data.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +10,7 @@ require __DIR__.'/foto-data.php';
 <body>
 <?php
 
-foreach ($foto as $key => $val){
+foreach ($foto as $key => $val) {
     ?><a href="/dz3/images.php?id=<?php echo $key; ?>"><img src="/dz3/img/<?php echo $val; ?>" width="200"></a><?php
 }
 

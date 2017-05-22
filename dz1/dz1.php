@@ -7,8 +7,8 @@
 <body>
 <?php
 
-var_dump(3/1); //int(3)
-var_dump(1/3); //float(0.33333333333333)
+var_dump(3 / 1); //int(3)
+var_dump(1 / 3); //float(0.33333333333333)
 var_dump('20cats' + 40); //int(60)
 var_dump(18 % 4); //int(2)
 
@@ -16,7 +16,7 @@ var_dump(18 % 4); //int(2)
 <br>
 <?php
 
-echo ($a = 2); // == 2
+echo($a = 2); // == 2
 $x = ($y = 12) - 8;// == 4
 echo $x;
 /*

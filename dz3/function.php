@@ -1,7 +1,7 @@
 <?php
 function calculator($a, $b, $operator)
 {
-    switch ($operator){
+    switch ($operator) {
         case '+':
             return $a + $b;
             break;
@@ -9,7 +9,7 @@ function calculator($a, $b, $operator)
             return $a - $b;
             break;
         case '/':
-            if(0 == $b){
+            if (0 == $b) {
                 return null;
             } else {
                 return $a / $b;
@@ -23,7 +23,8 @@ function calculator($a, $b, $operator)
             break;
     }
 }
-assert(4 == calculator(2,2, '+'));
-assert(8 == calculator(10,2, '-'));
-assert(2 == calculator(4,2, '/'));
-assert(4 == calculator(2,2, '*'));
+
+assert(4 == calculator(2, 2, '+'));
+assert(8 == calculator(10, 2, '-'));
+assert(2 == calculator(4, 2, '/'));
+assert(4 == calculator(2, 2, '*'));

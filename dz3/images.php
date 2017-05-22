@@ -1,8 +1,8 @@
 <?php
 
-require __DIR__.'/foto-data.php';
+require __DIR__ . '/foto-data.php';
 
-if(isset($_GET['id'])){
+if (isset($_GET['id'])) {
     $id = $_GET['id'];
 } else {
     $id = null;
@@ -16,7 +16,7 @@ if(isset($_GET['id'])){
 </head>
 <body>
 <?php
-if(array_key_exists($id, $foto)){
+if (array_key_exists($id, $foto)) {
     ?><img src="/dz3/img/<?php echo $foto[$id]; ?>"><?php
 } else {
     echo 'Изображения с таким id нет.';
