@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__.'/uploader.php';
+require __DIR__ . '/uploader.php';
 
 $uploader = new Uploader('img');
 $uploader->upload();
