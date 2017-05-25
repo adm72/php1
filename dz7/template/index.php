@@ -7,9 +7,11 @@
 <body>
 <h3>Записи:</h3>
 
-<?php foreach ($this->data['book'] as $value) {
+<?php
+foreach ($this->arr['book'] as $value) {
     ?><p><?php echo $value->getMessage(); ?></p><?php
-} ?>
+}
+?>
 
 </body>
 </html>

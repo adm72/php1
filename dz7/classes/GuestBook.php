@@ -2,23 +2,24 @@
 
 require __DIR__ . '/GuestBookRecord.php';
 
-class GuestBook //получаем данные
+class GuestBook
 {
-    protected $file;
+    public $path;
 
-    public function __construct($file)
+    public function __construct($path)
     {
-        $this->file = $file;
+        $this->path = $path;
     }
 
-    public function getAll()
+    public function getData()
     {
+        $data = file($this->path, FILE_IGNORE_NEW_LINES);
         $arr = [];
-        $data = file($this->file);
-        foreach ($data as $value) {
-            $arr[] = new GuestBookRecord($value);
+        foreach ($data as $item) {
+            $arr[] = new GuestBookRecord($item);
         }
         return $arr;
-
+        //чтобы запилить каждую запись в объект, нам нужно 2 массива.
+        //1й с записями из тхт, а другой чистый, в который зальются новые объекты.
     }
 }
