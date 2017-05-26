@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<?php
+    foreach ($this->arr['news'] as $value) {
+        ?>
+        <p>
+        <a href="/test/news/article.php?id=<?php echo $value->getArticleId() ?>"><?php echo $value->getArticleTitle() ?></a>
+        </p>
+        <?php echo mb_strimwidth($value->getArticle(), 0, 50, "..."); ?>
+    <?php
+    }
+?>
+</body>
+</html>

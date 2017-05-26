@@ -1,53 +1,11 @@
 <?php
 
-class View
-{
-    protected $arr;
+require __DIR__ . '/classes/View.php';
+require __DIR__ . '/classes/News.php';
 
-    public function assign($name, $value)
-    {
-        //- сохранить данные, передаваемые в шаблон по заданному имени (
-        //используйте защищенное свойство - массив для хранения этих данных)
-        $this->arr = [];
-        $this->arr[$name] = $value;
-        //объевили что защищенная переменная arr это пустой массив
-        //затем в этот массив добавляем ключ $name и значение $value
+$news = new News(__DIR__ . '/db.txt');
+$data = $news->getNews();
 
-    }
-
-    public function display($template)
-    {
-        //отображает указанный шаблон с заранее сохраненными данными
-        //прилетает ссылка на шаблон в котором будем выводить.
-        //вызывается метод чтобы выводить через буфер обмена
-        echo $this->render($template);
-
-
-    }
-
-    public function render($template)
-    {
-        ob_start();
-        include $template;
-        $content = ob_get_contents();
-        ob_end_clean();
-        return $content;
-
-    }
-}
-
-class Article
-{
-
-}
-
-class News
-{
-
-}
-
-$data = file(__DIR__.'/db.txt', FILE_IGNORE_NEW_LINES);
-foreach ($data as $datum) {
-   list ($id, $title, $news) = explode("|", $datum);
-   echo $id. ' ' .$title. ' '.$news.'<br>';
-}
+$view = new View();
+$view->assign('news', $data);
+$view->display(__DIR__ . '/template/News.html');

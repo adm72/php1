@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<?php
+
+foreach ($this->arr['news'] as $value) {
+
+    if ($_GET['id'] === $value->getArticleId()) {
+    ?>
+        <h3><?php echo $value->getArticleTitle(); ?></h3>
+        <p><?php echo $value->getArticle(); ?></p>
+    <?php
+    }
+}
+?>
+
+</body>
+</html>
