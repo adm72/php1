@@ -21,8 +21,7 @@ class GuestBook
             $this->arr[] = new GuestBookRecord($item);
         }
         return $this->arr;
-        //чтобы запилить каждую запись в объект, нам нужно 2 массива.
-        //1й с записями из тхт, а другой чистый, в который зальются новые объекты.
+
     }
 
     public function add(GuestBookRecord $text)

@@ -9,4 +9,7 @@ if (isset($_GET['id'])) {
     $view = new View();
     $view->assign('news', $data);
     $view->display(__DIR__ . '/template/Article.html');
+} else {
+    header('Location: /dz7/news/index.php');
+    exit();
 }
