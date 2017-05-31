@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Новости</title>
+</head>
+<body>
+
+<?php
+foreach ($this->arr['news'] as $val) {
+    ?><h3><a href="/dz8/article.php?id=<?php echo $val['id']; ?>"> <?php echo $val['title']; ?></a></h3>
+    <p><?php echo $val['text']; ?></p>
+    <i><?php echo $val['author']; ?></i>
+<?php
+}
+?>
+
+</body>
+</html>
